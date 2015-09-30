@@ -38,7 +38,7 @@ public class MyList extends Activity {
                 final Dialog dialog = new Dialog(context);
                 dialog.setContentView(R.layout.add_item);
                 dialog.show();
-
+                getUserInput = (EditText) findViewById(R.id.add_name);
                 Button dialogButton = (Button) dialog.findViewById(R.id.add_button);
                 dialogButton.setOnClickListener(new View.OnClickListener() {
 
@@ -47,9 +47,8 @@ public class MyList extends Activity {
                         double a = Math.random();
                         String b = Double.toString(a);
 
-                        getUserInput = (EditText) findViewById(R.id.addName);
-                        String UserInput;
-                        UserInput = getUserInput.getText().toString();
+                        getUserInput = (EditText) findViewById(R.id.add_name);
+                        String UserInput = getUserInput.getText().toString();
 
                         abc.add(UserInput);
                         def.add(b);
@@ -65,6 +64,7 @@ public class MyList extends Activity {
             }
         });
     }
+
     private static class EfficientAdapter extends BaseAdapter {
         private LayoutInflater mInflater;
 
